@@ -1,0 +1,15 @@
+{{ if not hugo.IsServer }}
+<script>
+(function() {
+  const TRACKER_URL = '{{ .Site.Params.pageviewsUrl | default "" }}';
+  if (!TRACKER_URL) return;
+
+  fetch(TRACKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ path: window.location.pathname }),
+    keepalive: true
+  }).catch(() => {});
+})();
+</script>
+{{ end }}
