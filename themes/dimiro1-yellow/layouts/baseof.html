@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default "en" }}" dir="{{ or site.Language.LanguageDirection "ltr" }}">
+<head>
+    {{- partial "head.html" . -}}
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+
+    {{- partial "header.html" . -}}
+
+    <main class="viewport">
+        <div class="page-content">
+            {{- block "main" . }}{{ end -}}
+        </div>
+
+        {{- block "pagination" . }}{{ end -}}
+        {{- partial "footer.html" . -}}
+    </main>
+
+    {{- partial "head/js.html" . -}}
+</body>
+</html>

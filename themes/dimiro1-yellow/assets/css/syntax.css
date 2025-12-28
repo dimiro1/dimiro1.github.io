@@ -1,0 +1,393 @@
+/* ==========================================================================
+   Chroma Syntax Highlighting
+   Inspired by dark themes with gold accent
+   ========================================================================== */
+
+/* Background */
+.chroma {
+    background-color: var(--code-bg);
+}
+
+/* Error */
+.chroma .err {
+    color: #ff6b6b;
+}
+
+/* LineLink */
+.chroma .lnlinks {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* LineTableTD */
+.chroma .lntd {
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* LineTable */
+.chroma .lntable {
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* LineHighlight */
+.chroma .hl {
+    background-color: rgba(241, 196, 15, 0.1);
+}
+
+/* LineNumbersTable */
+.chroma .lnt {
+    white-space: pre;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: var(--text-muted);
+}
+
+/* LineNumbers */
+.chroma .ln {
+    white-space: pre;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: var(--text-muted);
+}
+
+/* Line */
+.chroma .line {
+    display: flex;
+}
+
+/* Keyword - Gold */
+.chroma .k {
+    color: var(--accent-gold);
+}
+
+.chroma .kc {
+    color: var(--accent-gold);
+}
+
+.chroma .kd {
+    color: var(--accent-gold);
+}
+
+.chroma .kn {
+    color: var(--accent-gold);
+}
+
+.chroma .kp {
+    color: var(--accent-gold);
+}
+
+.chroma .kr {
+    color: var(--accent-gold);
+}
+
+/* KeywordType - Amber */
+.chroma .kt {
+    color: var(--accent-amber);
+}
+
+/* Name - White */
+.chroma .n {
+    color: var(--text-main);
+}
+
+/* NameAttribute */
+.chroma .na {
+    color: var(--accent-blue);
+}
+
+/* NameBuiltin - Blue */
+.chroma .nb {
+    color: var(--accent-blue);
+}
+
+.chroma .bp {
+    color: var(--accent-blue);
+}
+
+/* NameClass - Gold */
+.chroma .nc {
+    color: var(--accent-gold);
+}
+
+/* NameConstant */
+.chroma .no {
+    color: var(--accent-amber);
+}
+
+/* NameDecorator */
+.chroma .nd {
+    color: var(--accent-gold);
+}
+
+/* NameEntity */
+.chroma .ni {
+    color: var(--text-main);
+}
+
+/* NameException */
+.chroma .ne {
+    color: #ff6b6b;
+}
+
+/* NameFunction - Blue */
+.chroma .nf {
+    color: var(--accent-blue);
+}
+
+.chroma .fm {
+    color: var(--accent-blue);
+}
+
+/* NameLabel */
+.chroma .nl {
+    color: var(--text-dim);
+}
+
+/* NameNamespace - Blue */
+.chroma .nn {
+    color: var(--accent-blue);
+}
+
+/* NameOther */
+.chroma .nx {
+    color: var(--text-main);
+}
+
+/* NameProperty */
+.chroma .py {
+    color: var(--text-main);
+}
+
+/* NameTag */
+.chroma .nt {
+    color: var(--accent-gold);
+}
+
+/* NameVariable - White */
+.chroma .nv {
+    color: var(--text-main);
+}
+
+.chroma .vc {
+    color: var(--text-main);
+}
+
+.chroma .vg {
+    color: var(--text-main);
+}
+
+.chroma .vi {
+    color: var(--text-main);
+}
+
+.chroma .vm {
+    color: var(--text-main);
+}
+
+/* Literal */
+.chroma .l {
+    color: var(--accent-teal);
+}
+
+.chroma .ld {
+    color: var(--accent-teal);
+}
+
+/* LiteralString - Light Blue */
+.chroma .s {
+    color: var(--code-inline);
+}
+
+.chroma .sa {
+    color: var(--code-inline);
+}
+
+.chroma .sb {
+    color: var(--code-inline);
+}
+
+.chroma .sc {
+    color: var(--code-inline);
+}
+
+.chroma .dl {
+    color: var(--code-inline);
+}
+
+.chroma .sd {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.chroma .s2 {
+    color: var(--code-inline);
+}
+
+.chroma .se {
+    color: var(--accent-amber);
+}
+
+.chroma .sh {
+    color: var(--code-inline);
+}
+
+.chroma .si {
+    color: var(--accent-amber);
+}
+
+.chroma .sx {
+    color: var(--code-inline);
+}
+
+.chroma .sr {
+    color: var(--code-inline);
+}
+
+.chroma .s1 {
+    color: var(--code-inline);
+}
+
+/* LiteralStringSymbol - Cyan (Clojure :keywords) */
+.chroma .ss {
+    color: var(--accent-teal);
+}
+
+/* LiteralNumber - Amber */
+.chroma .m {
+    color: var(--accent-amber);
+}
+
+.chroma .mb {
+    color: var(--accent-amber);
+}
+
+.chroma .mf {
+    color: var(--accent-amber);
+}
+
+.chroma .mh {
+    color: var(--accent-amber);
+}
+
+.chroma .mi {
+    color: var(--accent-amber);
+}
+
+.chroma .il {
+    color: var(--accent-amber);
+}
+
+.chroma .mo {
+    color: var(--accent-amber);
+}
+
+/* Operator - Gold */
+.chroma .o {
+    color: var(--accent-gold);
+}
+
+.chroma .ow {
+    color: var(--accent-gold);
+}
+
+/* Punctuation - Muted */
+.chroma .p {
+    color: var(--text-dim);
+}
+
+/* Comment - Gray italic */
+.chroma .c {
+    color: #6a737d;
+    font-style: italic;
+}
+
+.chroma .ch {
+    color: #6a737d;
+    font-style: italic;
+}
+
+.chroma .cm {
+    color: #6a737d;
+    font-style: italic;
+}
+
+.chroma .c1 {
+    color: #6a737d;
+    font-style: italic;
+}
+
+.chroma .cs {
+    color: #6a737d;
+    font-style: italic;
+}
+
+.chroma .cp {
+    color: var(--accent-gold);
+}
+
+.chroma .cpf {
+    color: var(--accent-green);
+}
+
+/* Generic */
+.chroma .gd {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.chroma .ge {
+    font-style: italic;
+}
+
+.chroma .gr {
+    color: #ff6b6b;
+}
+
+.chroma .gh {
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+.chroma .gi {
+    color: var(--accent-green);
+    background-color: rgba(74, 222, 128, 0.1);
+}
+
+.chroma .go {
+    color: var(--text-dim);
+}
+
+.chroma .gp {
+    color: var(--text-muted);
+}
+
+.chroma .gs {
+    font-weight: 700;
+}
+
+.chroma .gu {
+    color: var(--accent-gold);
+}
+
+.chroma .gt {
+    color: #ff6b6b;
+}
+
+.chroma .gl {
+    text-decoration: underline;
+}
+
+.chroma .w {
+    color: var(--text-muted);
+}

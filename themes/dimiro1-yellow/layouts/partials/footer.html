@@ -1,0 +1,30 @@
+<footer class="site-footer">
+    <div class="site-footer__row">
+        <span class="site-footer__status">{{ if .IsPage }}EOF{{ else }}End of Buffer{{ end }}</span>
+        <div class="site-footer__links">
+            {{- with site.Params.github }}
+            <a href="{{ . }}" class="site-footer__link" target="_blank" rel="noopener" aria-label="GitHub">
+                {{- partial "icons/github.html" (dict "size" 18) -}}
+            </a>
+            {{- end }}
+            {{- with site.Params.codeberg }}
+            <a href="{{ . }}" class="site-footer__link" target="_blank" rel="noopener" aria-label="Codeberg">
+                {{- partial "icons/codeberg.html" (dict "size" 18) -}}
+            </a>
+            {{- end }}
+            {{- with site.Params.linkedin }}
+            <a href="{{ . }}" class="site-footer__link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                {{- partial "icons/linkedin.html" (dict "size" 18) -}}
+            </a>
+            {{- end }}
+            {{- with site.Home.OutputFormats.Get "rss" }}
+            <a href="{{ .Permalink }}" class="site-footer__link" aria-label="RSS">
+                {{- partial "icons/rss.html" (dict "size" 18) -}}
+            </a>
+            {{- end }}
+        </div>
+    </div>
+    <div class="site-footer__license">
+        Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> · © {{ now.Year }} Claudemiro · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA-4.0</a>
+    </div>
+</footer>

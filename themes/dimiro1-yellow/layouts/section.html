@@ -1,0 +1,19 @@
+{{ define "main" }}
+<header class="site-header{{ if not .Description }} site-header--simple{{ end }}">
+    <h1 class="site-header__label">{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="site-header__tagline">{{ . }}</p>
+    {{- end }}
+</header>
+
+<section>
+    {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
+    {{- range $paginator.Pages }}
+        {{- partial "entry.html" . }}
+    {{- end }}
+</section>
+{{ end }}
+
+{{ define "pagination" }}
+{{- partial "pagination.html" . -}}
+{{ end }}

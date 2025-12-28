@@ -1,0 +1,9 @@
+{{- $isAbsolute := or (hasPrefix .Destination "http://") (hasPrefix .Destination "https://") -}}
+{{- $siteDomain := urls.Parse site.BaseURL -}}
+{{- $destURL := urls.Parse .Destination -}}
+{{- $isExternal := and $isAbsolute (ne $destURL.Host $siteDomain.Host) -}}
+{{- if $isExternal -}}
+<a href="{{ .Destination }}" target="_blank" rel="noopener"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}{{ partial "icons/external.html" (dict "size" 12) }}</a>
+{{- else -}}
+<a href="{{ .Destination }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>
+{{- end -}}

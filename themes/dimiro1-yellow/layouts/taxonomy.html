@@ -1,0 +1,12 @@
+{{ define "main" }}
+<header class="site-header">
+    <p class="site-header__label">Browse by</p>
+    <h1 class="site-header__tagline">{{ .Title }}</h1>
+</header>
+
+<div class="tags-cloud">
+    {{- range .Pages.ByLinkTitle }}
+    <a href="{{ .RelPermalink }}" class="tag-box">{{ .LinkTitle }} <span class="tag-count">({{ len .Pages }})</span></a>
+    {{- end }}
+</div>
+{{ end }}

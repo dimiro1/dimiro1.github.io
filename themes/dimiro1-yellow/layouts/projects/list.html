@@ -1,0 +1,12 @@
+{{ define "main" }}
+<header class="site-header">
+    <h1 class="site-header__label">{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="site-header__tagline">{{ . }}</p>
+    {{- end }}
+</header>
+
+<article class="post-body">
+    {{ .Content }}
+</article>
+{{ end }}

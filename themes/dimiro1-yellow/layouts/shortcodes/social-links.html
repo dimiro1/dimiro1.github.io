@@ -1,0 +1,17 @@
+<div class="social-links">
+    {{- with site.Params.github }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">
+        {{- partial "icons/github.html" (dict "size" 24) -}}
+    </a>
+    {{- end }}
+    {{- with site.Params.codeberg }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="Codeberg">
+        {{- partial "icons/codeberg.html" (dict "size" 24) -}}
+    </a>
+    {{- end }}
+    {{- with site.Params.linkedin }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+        {{- partial "icons/linkedin.html" (dict "size" 24) -}}
+    </a>
+    {{- end }}
+</div>

@@ -1,0 +1,10 @@
+{{ define "main" }}
+<header class="site-header">
+    <h1 class="site-header__label">{{ site.Params.author }}</h1>
+    <p class="site-header__tagline">{{ site.Params.tagline }}</p>
+</header>
+
+<article class="post-body post-body--about">
+    {{ .Content }}
+</article>
+{{ end }}

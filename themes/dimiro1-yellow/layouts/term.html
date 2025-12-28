@@ -1,0 +1,16 @@
+{{ define "main" }}
+<header class="site-header">
+    <p class="site-header__label">Tag</p>
+    <h1 class="site-header__tagline">{{ .Title }}</h1>
+</header>
+
+<section class="posts-list">
+    {{- range .Paginator.Pages }}
+        {{- partial "entry.html" . }}
+    {{- end }}
+</section>
+{{ end }}
+
+{{ define "pagination" }}
+    {{- partial "pagination.html" . }}
+{{ end }}

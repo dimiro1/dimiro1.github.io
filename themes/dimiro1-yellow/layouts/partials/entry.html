@@ -1,0 +1,23 @@
+<article class="entry-row">
+    <a href="{{ .RelPermalink }}" class="entry-link">
+        <div class="entry-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+            {{- with .Params.category }} // {{ . }}{{ end }}
+        </div>
+        <h2 class="entry-title">{{ .Title }}</h2>
+        {{- with .Description }}
+        <p class="entry-summary">{{ . }}</p>
+        {{- else }}
+        {{- with .Summary }}
+        <p class="entry-summary">{{ . | plainify | truncate 160 }}</p>
+        {{- end }}
+        {{- end }}
+    </a>
+    {{- with .GetTerms "tags" }}
+    <div class="entry-tags">
+        {{- range . }}
+        <a href="{{ .RelPermalink }}" class="tag-box">{{ .LinkTitle }}</a>
+        {{- end }}
+    </div>
+    {{- end }}
+</article>

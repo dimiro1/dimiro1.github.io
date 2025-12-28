@@ -1,0 +1,20 @@
+<nav class="modeline">
+    <div class="modeline-inner">
+        <div class="modeline-left">
+            <a href="{{ "/" | relURL }}" class="modeline-tag">{{ site.Title | upper }}</a>
+            <span class="nav-item hide-mobile">mode: <span id="mode-text">{{ if .IsHome }}blog-index{{ else }}{{ .Kind }}-mode{{ end }}</span></span>
+            <span class="nav-item hide-tablet">UTF-8</span>
+        </div>
+        <div class="modeline-right">
+            {{- range site.Menus.main }}
+            <a href="{{ .URL }}" class="nav-item{{ if $.IsMenuCurrent "main" . }} nav-item--active{{ end }}">
+                {{- if eq .Identifier "home" }}{{ partial "icons/home.html" (dict "size" 14) }}{{ end -}}
+                {{- if eq .Identifier "about" }}{{ partial "icons/user.html" (dict "size" 14) }}{{ end -}}
+                {{- if eq .Identifier "now" }}{{ partial "icons/clock.html" (dict "size" 14) }}{{ end -}}
+                {{- if eq .Identifier "projects" }}{{ partial "icons/folder.html" (dict "size" 14) }}{{ end -}}
+                <span>{{ .Name }}</span>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</nav>

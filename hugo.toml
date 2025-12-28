@@ -1,0 +1,71 @@
+baseURL = 'https://dimiro1.dev/'
+languageCode = 'en-US'
+title = 'DIMIRO1.DEV'
+theme = 'dimiro1-yellow'
+
+[params]
+  author = 'Claudemiro'
+  label = "Claudemiro's Engineering_Notes"
+  tagline = 'Lead engineer shipping products. Go and Java for work, Clojure for exploration.'
+  homeTagline = 'Thoughts on building software'
+  description = 'Personal blog about software engineering, functional programming, and system design.'
+  github = 'https://github.com/dimiro1'
+  codeberg = 'https://codeberg.org/dimiro1'
+  linkedin = 'https://www.linkedin.com/in/claudemiro/'
+
+[menus]
+  [[menus.main]]
+    identifier = 'home'
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[menus.main]]
+    identifier = 'projects'
+    name = 'Open Source'
+    pageRef = '/projects'
+    weight = 20
+
+  [[menus.main]]
+    identifier = 'now'
+    name = 'Now'
+    pageRef = '/now'
+    weight = 30
+
+  [[menus.main]]
+    identifier = 'about'
+    name = 'About'
+    pageRef = '/about'
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    tabWidth = 4
+
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  posts = '/:contentbasename/'
+
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.5
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = 'application/rss+xml'
+    baseName = 'index'

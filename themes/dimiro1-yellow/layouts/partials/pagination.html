@@ -1,0 +1,15 @@
+{{- if .Paginator }}
+<nav class="pagination">
+    {{- if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="pagination-link">&larr; Previous</a>
+    {{- else }}
+    <span class="pagination-link pagination-link--disabled">&larr; Previous</span>
+    {{- end }}
+
+    {{- if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="pagination-link">Next &rarr;</a>
+    {{- else }}
+    <span class="pagination-link pagination-link--disabled">Next &rarr;</span>
+    {{- end }}
+</nav>
+{{- end }}
