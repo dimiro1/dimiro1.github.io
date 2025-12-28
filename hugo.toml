@@ -5,7 +5,7 @@ theme = 'dimiro1-yellow'
 
 [params]
   author = 'Claudemiro'
-  pageviewsUrl = 'https://faas-go-production.up.railway.app/fn/d58jc3dqcdjs73fa4m3g/track'
+  analyticsUrl = 'https://faas-go-production.up.railway.app/fn/d58jc3dqcdjs73fa4m3g'
   label = "Claudemiro's Engineering_Notes"
   tagline = 'Lead engineer shipping products. Go and Java for work, Clojure for exploration.'
   homeTagline = 'Thoughts on building software'

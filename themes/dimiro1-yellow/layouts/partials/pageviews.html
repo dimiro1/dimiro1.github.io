@@ -1,15 +1,39 @@
 {{ if not hugo.IsServer }}
 <script>
 (function() {
-  const TRACKER_URL = '{{ .Site.Params.pageviewsUrl | default "" }}';
+  const TRACKER_URL = '{{ .Site.Params.analyticsUrl | default "" }}';
   if (!TRACKER_URL) return;
 
-  fetch(TRACKER_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ path: window.location.pathname }),
-    keepalive: true
-  }).catch(() => {});
+  let sessionId = null;
+  const startTime = Date.now();
+  const genId = () => Math.random().toString(36).slice(2, 11) + Date.now().toString(36);
+
+  requestIdleCallback(() => {
+    fetch(TRACKER_URL + '/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        path: location.pathname,
+        referrer: document.referrer,
+        session_id: genId()
+      })
+    })
+    .then(r => r.json())
+    .then(data => { sessionId = data.session_id; })
+    .catch(() => {});
+  });
+
+  const sendDuration = () => {
+    if (!sessionId) return;
+    const duration = Math.floor((Date.now() - startTime) / 1000);
+    if (duration < 1) return;
+    navigator.sendBeacon(TRACKER_URL + '/duration', JSON.stringify({ session_id: sessionId, duration }));
+  };
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') sendDuration();
+  });
+  addEventListener('pagehide', sendDuration);
 })();
 </script>
 {{ end }}
