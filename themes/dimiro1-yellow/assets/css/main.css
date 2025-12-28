@@ -781,6 +781,41 @@ img {
 }
 
 /* ==========================================================================
+   Components: HTML Demo (Sandboxed iframe)
+   ========================================================================== */
+
+.html-demo {
+    position: relative;
+    margin: 2.5rem 0;
+}
+
+.html-demo::after {
+    content: attr(data-title);
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.html-demo__iframe {
+    width: 100%;
+    min-height: 100px;
+    border: none;
+    background: #fff;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
    Components: Back Link
    ========================================================================== */
 

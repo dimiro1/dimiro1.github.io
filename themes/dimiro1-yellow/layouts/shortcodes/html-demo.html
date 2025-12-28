@@ -1,0 +1,41 @@
+{{- $title := .Get "title" | default "html-demo" -}}
+{{- $height := .Get "height" -}}
+{{- $modals := .Get "modals" | default "false" -}}
+{{- $sandbox := cond (eq $modals "true") "allow-scripts allow-modals" "allow-scripts" -}}
+<div class="html-demo" data-title="{{ $title }}"{{ with $height }} data-height="{{ . }}"{{ end }}>
+  <iframe class="html-demo__iframe" sandbox="{{ $sandbox }}"></iframe>
+  <script type="text/html">{{ .Inner | safeHTML }}</script>
+</div>
+<script>
+(function() {
+  const container = document.currentScript.previousElementSibling;
+  const iframe = container.querySelector('iframe');
+  const rawContent = container.querySelector('script[type="text/html"]').textContent;
+  const fixedHeight = container.dataset.height;
+
+  // Inject resize script for auto-height
+  const resizeScript = `<script>
+    (function() {
+      function sendHeight() {
+        const height = Math.max(document.body.scrollHeight, document.body.offsetHeight, 50);
+        parent.postMessage({ type: 'html-demo-resize', height: height }, '*');
+      }
+      window.addEventListener('load', sendHeight);
+      new MutationObserver(sendHeight).observe(document.body, { childList: true, subtree: true });
+      setTimeout(sendHeight, 100);
+    })();
+  <\/script>`;
+
+  iframe.srcdoc = rawContent + resizeScript;
+
+  if (fixedHeight) {
+    iframe.style.height = fixedHeight;
+  } else {
+    window.addEventListener('message', function(e) {
+      if (e.source === iframe.contentWindow && e.data.type === 'html-demo-resize') {
+        iframe.style.height = e.data.height + 'px';
+      }
+    });
+  }
+})();
+</script>
