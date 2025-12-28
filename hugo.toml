@@ -52,7 +52,7 @@ theme = 'dimiro1-yellow'
     tabWidth = 4
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 15
 
 [permalinks]
   posts = '/:contentbasename/'
