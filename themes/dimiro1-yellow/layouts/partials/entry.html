@@ -2,7 +2,7 @@
     <a href="{{ .RelPermalink }}" class="entry-link">
         <div class="entry-meta">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
-            {{- with .Params.category }} // {{ . }}{{ end }}
+            · {{ .ReadingTime }} min
         </div>
         <h2 class="entry-title">{{ .Title }}</h2>
         {{- with .Description }}

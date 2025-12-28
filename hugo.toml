@@ -69,3 +69,4 @@ theme = 'dimiro1-yellow'
   [outputFormats.RSS]
     mediaType = 'application/rss+xml'
     baseName = 'index'
+    path = 'feed'

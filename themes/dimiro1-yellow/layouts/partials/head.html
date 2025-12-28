@@ -76,7 +76,7 @@
 
 {{/* RSS Feed */}}
 {{ range .AlternativeOutputFormats -}}
-{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink (printf "%s - %s" site.Title (.Name | upper)) | safeHTML }}
+{{ printf `<link rel="alternate" type="%s" href="%s" title="dimiro1's notes » Feed">` .MediaType.Type .Permalink | safeHTML }}
 {{ end -}}
 
 {{/* JSON-LD Structured Data */}}

@@ -440,12 +440,19 @@ img {
     margin-bottom: 2.5rem;
 }
 
-.post-date {
-    display: block;
+.post-meta {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     color: var(--text-dim);
     margin-bottom: 0.5rem;
+}
+
+.post-date {
+    display: inline;
+}
+
+.post-reading-time {
+    display: inline;
 }
 
 .post-title {
