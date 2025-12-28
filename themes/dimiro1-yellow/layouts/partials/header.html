@@ -3,7 +3,7 @@
         <div class="modeline-left">
             <a href="{{ "/" | relURL }}" class="modeline-tag">{{ site.Title | upper }}</a>
             <span class="nav-item hide-mobile">mode: <span id="mode-text">{{ if .IsHome }}blog-index{{ else }}{{ .Kind }}-mode{{ end }}</span></span>
-            <span class="nav-item hide-tablet">UTF-8</span>
+            <span class="nav-item hide-tablet">{{ .Title }}</span>
         </div>
         <div class="modeline-right">
             {{- range site.Menus.main }}
@@ -15,6 +15,10 @@
                 <span>{{ .Name }}</span>
             </a>
             {{- end }}
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-toggle__icon theme-toggle__icon--light">{{ partial "icons/sun.html" (dict "size" 16) }}</span>
+                <span class="theme-toggle__icon theme-toggle__icon--dark">{{ partial "icons/moon.html" (dict "size" 16) }}</span>
+            </button>
         </div>
     </div>
 </nav>
