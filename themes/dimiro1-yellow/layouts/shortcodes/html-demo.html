@@ -2,9 +2,20 @@
 {{- $height := .Get "height" -}}
 {{- $modals := .Get "modals" | default "false" -}}
 {{- $sandbox := cond (eq $modals "true") "allow-scripts allow-modals" "allow-scripts" -}}
+{{- $reserved := slice "title" "height" "modals" -}}
+{{- $content := .Inner -}}
+{{- range $key, $value := .Params -}}
+  {{- if not (in $reserved $key) -}}
+    {{- $resource := $.Page.Resources.GetMatch $value -}}
+    {{- if $resource -}}
+      {{- $placeholder := printf "{{%s}}" $key -}}
+      {{- $content = replace $content $placeholder $resource.Permalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 <div class="html-demo" data-title="{{ $title }}"{{ with $height }} data-height="{{ . }}"{{ end }}>
   <iframe class="html-demo__iframe" sandbox="{{ $sandbox }}"></iframe>
-  <script type="text/html">{{ .Inner | safeHTML }}</script>
+  <script type="text/html">{{ $content | safeHTML }}</script>
 </div>
 <script>
 (function() {
