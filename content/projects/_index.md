@@ -9,23 +9,29 @@ A lightweight, self-hosted FaaS platform written in Go with Lua scripting. Featu
 
 [github.com/dimiro1/lunar](https://github.com/dimiro1/lunar)
 
-## Health
+## dimiro1.dev
+
+The source code for this blog.
+
+[github.com/dimiro1/dimiro1.github.io](https://github.com/dimiro1/dimiro1.github.io)
+
+## Health (450+ stars)
 
 An extensible health check library for Go applications. Returns HTTP 200 when healthy, 503 when degraded. Includes built-in checkers for URLs, MySQL, and Redis. Easily extensible with custom checkers through a simple interface. Inspired by Spring Framework.
 
 [github.com/dimiro1/health](https://github.com/dimiro1/health)
 
-## Ipe
-
-Open source Pusher server implementation in Go. Supports public, private, and presence channels, WebSocket connections, REST API, webhooks, and client events. Protocol version 7 compatible. Drop-in replacement for Pusher with official client library support.
-
-[github.com/dimiro1/ipe](https://github.com/dimiro1/ipe)
-
-## Banner
+## Banner (460+ stars)
 
 Add startup banners to Go applications. Supports template variables for system info (Go version, OS, architecture), ASCII art generation, and ANSI colors. Simple integration with autoload import.
 
 [github.com/dimiro1/banner](https://github.com/dimiro1/banner)
+
+## Ipe (360+ stars)
+
+Open source Pusher server implementation in Go. Supports public, private, and presence channels, WebSocket connections, REST API, webhooks, and client events. Protocol version 7 compatible. Drop-in replacement for Pusher with official client library support.
+
+[github.com/dimiro1/ipe](https://github.com/dimiro1/ipe)
 
 ## Darwin
 
