@@ -2,8 +2,8 @@
     <div class="modeline-inner">
         <div class="modeline-left">
             <a href="{{ "/" | relURL }}" class="modeline-tag">{{ site.Title | upper }}</a>
-            <span class="nav-item hide-mobile">mode: <span id="mode-text">{{ if .IsHome }}blog-index{{ else }}{{ .Kind }}-mode{{ end }}</span></span>
-            <span class="nav-item hide-tablet">{{ .Title }}</span>
+            <span class="nav-item hide-tablet">mode: <span id="mode-text">{{ if .IsHome }}blog-index{{ else }}{{ .Kind }}-mode{{ end }}</span></span>
+            <span class="nav-item nav-item--title hide-mobile">{{ .Title }}</span>
         </div>
         <div class="modeline-right">
             {{- range site.Menus.main }}

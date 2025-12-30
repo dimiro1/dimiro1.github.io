@@ -240,6 +240,7 @@ img {
     color: var(--text-dim);
     border-right: 1px solid var(--border-modeline);
     transition: color 0.2s;
+    white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -248,6 +249,20 @@ img {
 
 .nav-item:last-child {
     border-right: none;
+}
+
+.nav-item--title {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+@media (max-width: 1200px) {
+    .nav-item--title {
+        max-width: 200px;
+    }
 }
 
 .theme-toggle {
@@ -991,8 +1006,14 @@ img {
    Responsive: Hide on mobile
    ========================================================================== */
 
-@media (max-width: 639px) {
+@media (max-width: 1024px) {
     .hide-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .hide-tablet {
         display: none;
     }
 
@@ -1029,8 +1050,3 @@ img {
     }
 }
 
-@media (max-width: 767px) {
-    .hide-tablet {
-        display: none;
-    }
-}
