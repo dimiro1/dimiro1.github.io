@@ -1,9 +1,8 @@
 +++
 title = 'How we made buttons before CSS3'
-date = 2026-01-02
+date = 2026-01-01
 description = ''
 tags = ['CSS', 'HTML']
-draft = true
 +++
 
 It's 2007, and your designer just handed you a design with a "beautiful button", back then, most likely a PSD from Photoshop or a Fireworks file. Looking at the file, you notice that the button has:
