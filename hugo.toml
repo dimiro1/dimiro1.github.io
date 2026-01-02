@@ -71,3 +71,7 @@ theme = 'dimiro1-yellow'
     mediaType = 'application/rss+xml'
     baseName = 'index'
     path = 'feed'
+
+[services]
+  [services.rss]
+    limit = 20
